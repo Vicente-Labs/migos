@@ -1,0 +1,1 @@
+CREATE DATABASE migos_test;

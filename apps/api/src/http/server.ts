@@ -35,17 +35,7 @@ import { getPendingInvites } from './routes/invites/fetch-pending-invites'
 import { getInvite } from './routes/invites/get-invite'
 import { revokeInvite } from './routes/invites/revoke-invite'
 
-const app = fastify({
-  logger: {
-    transport: {
-      target: 'pino-pretty',
-      options: {
-        translateTime: 'HH:MM:ss Z',
-        ignore: 'pid,hostname',
-      },
-    },
-  },
-}).withTypeProvider<ZodTypeProvider>()
+export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
