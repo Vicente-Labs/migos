@@ -5,7 +5,16 @@ import { boolean, pgEnum, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 import { preRegisters } from '.'
 
 export const providerEnum = pgEnum('provider', ['GOOGLE'])
-export const planEnum = pgEnum('plan', ['BASIC', 'PRO'])
+export const planEnum = pgEnum('plan', ['FREE', 'PRO'])
+export const continentEnum = pgEnum('continent', [
+  'AF',
+  'AN',
+  'AS',
+  'EU',
+  'NA',
+  'OC',
+  'SA',
+])
 
 export const users = pgTable('users', {
   id: text('id')
@@ -22,7 +31,17 @@ export const users = pgTable('users', {
     .references(() => preRegisters.id)
     .unique(),
 
-  plan: planEnum('plan').notNull().default('BASIC'),
+  stripeCustomerId: text('stripe_customer_id').unique(),
+  stripeSubscriptionId: text('stripe_subscription_id').unique(),
+  stripePriceId: text('stripe_price_id').unique(),
+  stripeCurrentPeriodEnd: timestamp('stripe_current_period_end', {
+    withTimezone: true,
+    mode: 'date',
+  }),
+
+  continent: continentEnum('continent').notNull(),
+
+  plan: planEnum('plan').notNull().default('FREE'),
 
   provider: providerEnum('provider'),
   providerId: text('provider_id').unique(),

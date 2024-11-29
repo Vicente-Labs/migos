@@ -34,6 +34,8 @@ import { fetchInvites } from './routes/invites/fetch-invites'
 import { getPendingInvites } from './routes/invites/fetch-pending-invites'
 import { getInvite } from './routes/invites/get-invite'
 import { revokeInvite } from './routes/invites/revoke-invite'
+import { createStripeSessionRoute } from './routes/payments/crete-stripe-session'
+import { stripeWebhookRoute } from './routes/payments/stripe-webhook'
 
 const app = fastify({
   logger: {
@@ -113,6 +115,9 @@ app.register(fetchInvites)
 app.register(revokeInvite)
 app.register(getPendingInvites)
 app.register(getInvite)
+
+app.register(createStripeSessionRoute)
+app.register(stripeWebhookRoute)
 
 app.listen({
   host: env.HOST,

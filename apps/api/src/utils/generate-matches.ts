@@ -16,7 +16,6 @@ export async function generateMatchesFn(members: Members) {
         const giver = shuffledMembers[i]
         let receiver = null
 
-        // Find a valid receiver that isn't the giver and hasn't been used
         for (let j = 0; j < shuffledMembers.length; j++) {
           const potentialReceiver = shuffledMembers[j]
           if (
@@ -28,10 +27,7 @@ export async function generateMatchesFn(members: Members) {
           }
         }
 
-        if (!receiver) {
-          // If we couldn't find a valid receiver, start over
-          throw new Error('Invalid matching configuration')
-        }
+        if (!receiver) throw new Error('Invalid matching configuration')
 
         matches.push({
           giverId: giver.userId,
@@ -43,11 +39,10 @@ export async function generateMatchesFn(members: Members) {
       return { matches }
     } catch (error) {
       attempts++
-      if (attempts >= maxAttempts) {
+      if (attempts >= maxAttempts)
         throw new Error(
           'Unable to generate valid matches after maximum attempts',
         )
-      }
     }
   }
 

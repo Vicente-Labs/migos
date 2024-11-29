@@ -9,6 +9,8 @@ const envSchema = z.object({
   GOOGLE_REDIRECT_URI: z.string().url(),
   NEXT_PUBLIC_BASE_URL: z.string().url(),
   HOST: z.string().default('0.0.0.0'),
+  STRIPE_SECRET_KEY: z.string(),
+  STRIPE_WEBHOOK_SECRET: z.string(),
 })
 
 export const env = envSchema.parse(process.env)

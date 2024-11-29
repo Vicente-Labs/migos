@@ -127,6 +127,27 @@
       "when": 1732900773131,
       "tag": "20241129171933_add-primary-key-on-member-and-index",
       "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1732914044131,
+      "tag": "20241129210044_add-customer-stripe-id-on-users-table",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1732916023210,
+      "tag": "20241129213343_add-continent-to-user-db",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1732916093980,
+      "tag": "20241129213453_remove-default-param-at-user-continent",
+      "breakpoints": true
     }
   ]
 }
