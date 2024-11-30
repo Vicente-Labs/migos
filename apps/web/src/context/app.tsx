@@ -22,7 +22,7 @@ export const AppWrapper = ({ children }: AppWrapperProps) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NextTopLoader color="#ccc" showSpinner={false} />
+      <NextTopLoader color="#794927" showSpinner={false} />
       {children}
     </QueryClientProvider>
   )

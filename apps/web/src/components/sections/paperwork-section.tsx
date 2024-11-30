@@ -14,7 +14,7 @@ export function PaperworkSection() {
   return (
     <motion.section
       id="paperwork"
-      className="flex flex-col items-center justify-center gap-8 px-4 py-12 md:gap-16 lg:flex-row lg:gap-[420px] lg:px-20 lg:py-24"
+      className="flex min-h-screen w-full flex-col items-center justify-center gap-8 px-4 py-12 sm:min-h-[80vh] sm:gap-12 md:gap-16 lg:flex-row lg:gap-20 lg:px-8 lg:py-24 xl:gap-[420px] xl:px-20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
@@ -25,39 +25,40 @@ export function PaperworkSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}
-        className="order-2 lg:order-1"
+        className="order-2 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:order-1 lg:max-w-[500px]"
       >
         <Image
           src="/gifts.svg"
           alt="Gifts"
           width={500}
           height={500}
-          className="w-[280px] md:w-[400px] lg:w-[500px]"
+          className="h-auto w-full drop-shadow-[-21px_22px_24px_#00000078]"
+          priority
         />
       </motion.div>
 
       <motion.div
-        className="order-1 flex w-full flex-col items-center gap-6 text-center md:gap-10 lg:order-2 lg:w-auto lg:items-start lg:text-left"
+        className="order-1 flex w-full flex-col items-center gap-6 text-center sm:gap-8 md:gap-10 lg:order-2 lg:w-auto lg:max-w-xl lg:items-start lg:text-left"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-col gap-2">
-          <h1 className="max-w-sm break-words text-4xl md:text-5xl">
+        <div className="flex flex-col gap-2 sm:gap-3">
+          <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl xl:text-6xl">
             {dictionary.putThePaperworkAside}
           </h1>
-          <span className="max-w-md break-words text-xl text-[#848780] md:text-2xl">
+          <span className="text-lg text-[#848780] sm:text-xl md:text-2xl xl:text-3xl">
             {dictionary.letUsWithTheBoringPart}
           </span>
         </div>
 
-        <div className="w-1/2 lg:w-full">
+        <div className="w-full max-w-xs sm:max-w-sm lg:max-w-md">
           <Button
             onClick={() => {
               toast.error(`We're not launched yet.`)
             }}
-            className="flex w-full flex-row items-center justify-center px-4 py-4 text-sm md:px-6 md:py-6 md:text-xl"
+            className="w-full rounded-lg px-4 py-3 text-sm font-medium transition-colors sm:py-4 sm:text-base md:px-6 md:py-5 md:text-xl"
           >
             {dictionary.letsDoIt}
           </Button>

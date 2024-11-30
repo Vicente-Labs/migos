@@ -46,7 +46,12 @@ export default async function RootLayout({
     <html
       lang={lang}
       suppressHydrationWarning
-      className={cn(poppins.variable, inter.variable, cooperBlack.variable)}
+      className={cn(
+        poppins.variable,
+        inter.variable,
+        cooperBlack.variable,
+        'scroll-smooth',
+      )}
     >
       <head>
         <meta name="theme-color" content="#f8ffed" />

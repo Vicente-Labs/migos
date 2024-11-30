@@ -64,7 +64,7 @@ export function CTASection() {
           alt="Snow Man"
           width={500}
           height={500}
-          className="w-[280px] md:w-[400px] lg:w-[500px]"
+          className="w-[280px] drop-shadow-[21px_15px_24px_#00000078] md:w-[400px] lg:w-[500px]"
         />
       </motion.div>
     </motion.section>
