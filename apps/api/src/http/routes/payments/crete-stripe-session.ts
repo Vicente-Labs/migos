@@ -79,7 +79,7 @@ export async function createStripeSessionRoute(app: FastifyInstance) {
 
         const stripeSession = await stripe.checkout.sessions.create({
           payment_method_types: ['card'],
-          mode: 'subscription',
+          mode: 'payment',
           billing_address_collection: 'auto',
           metadata: { userId },
           line_items: [
