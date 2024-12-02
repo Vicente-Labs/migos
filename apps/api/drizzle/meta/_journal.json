@@ -127,6 +127,20 @@
       "when": 1732900773131,
       "tag": "20241129171933_add-primary-key-on-member-and-index",
       "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1733101587888,
+      "tag": "20241202010627_remove-plans-logic",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1733101655390,
+      "tag": "20241202010735_add-register-user-locale-into-db",
+      "breakpoints": true
     }
   ]
 }

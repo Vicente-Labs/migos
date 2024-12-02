@@ -1,5 +1,7 @@
 import { createId } from '@paralleldrive/cuid2'
-import { pgTable, text, timestamp, varchar } from 'drizzle-orm/pg-core'
+import { pgEnum, pgTable, text, timestamp, varchar } from 'drizzle-orm/pg-core'
+
+export const localeEnum = pgEnum('locale', ['en-US', 'pt-BR', 'es-ES'])
 
 export const preRegisters = pgTable('pre_registers', {
   id: text('id')
@@ -7,7 +9,7 @@ export const preRegisters = pgTable('pre_registers', {
     .primaryKey(),
 
   email: varchar('email', { length: 255 }).notNull().unique(),
-
+  locale: localeEnum('locale').notNull().default('en-US'),
   createdAt: timestamp('created_at', { withTimezone: true })
     .notNull()
     .defaultNow(),

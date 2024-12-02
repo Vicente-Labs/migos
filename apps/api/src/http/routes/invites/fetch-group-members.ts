@@ -1,4 +1,3 @@
-import { planSchema } from '@migos/auth'
 import { eq, sql } from 'drizzle-orm'
 import type { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
@@ -15,7 +14,6 @@ const userSchema = z.object({
   avatarUrl: z.string().nullable(),
   isAdmin: z.boolean(),
   isOwner: z.boolean(),
-  plan: planSchema,
 })
 
 export async function fetchGroupMembers(app: FastifyInstance) {
@@ -61,7 +59,6 @@ export async function fetchGroupMembers(app: FastifyInstance) {
             avatarUrl: users.avatarUrl,
             isAdmin: sql<boolean>`${member.role} = 'ADMIN'`,
             isOwner: sql<boolean>`${group.ownerId} = ${member.userId}`,
-            plan: users.plan,
           })
           .from(member)
           .where(eq(member.groupId, groupId))
@@ -79,7 +76,6 @@ export async function fetchGroupMembers(app: FastifyInstance) {
               avatarUrl: member.avatarUrl,
               isAdmin: member.role === 'ADMIN',
               isOwner: group.ownerId === member.id,
-              plan: member.plan ?? 'BASIC',
             }
           })
           .filter((member) => member !== null)

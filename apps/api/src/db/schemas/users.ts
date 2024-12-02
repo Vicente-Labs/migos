@@ -4,8 +4,9 @@ import { boolean, pgEnum, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 
 import { preRegisters } from '.'
 
+export const localeEnum = pgEnum('locale', ['en-US', 'pt-BR', 'es-ES'])
+
 export const providerEnum = pgEnum('provider', ['GOOGLE'])
-export const planEnum = pgEnum('plan', ['BASIC', 'PRO'])
 
 export const users = pgTable('users', {
   id: text('id')
@@ -17,12 +18,12 @@ export const users = pgTable('users', {
   passwordHash: text('password_hash'),
   avatarUrl: text('avatar_url'),
 
+  locale: localeEnum('locale').notNull().default('en-US'),
+
   preRegistered: boolean('pre_registered').notNull().default(false),
   preRegisterId: text('pre_register_id')
     .references(() => preRegisters.id)
     .unique(),
-
-  plan: planEnum('plan').notNull().default('BASIC'),
 
   provider: providerEnum('provider'),
   providerId: text('provider_id').unique(),

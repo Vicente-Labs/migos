@@ -22,6 +22,7 @@ export async function registerAccountWithPassword(app: FastifyInstance) {
           password: z
             .string()
             .min(8, 'Password must be at least 8 characters long'),
+          locale: z.enum(['en-US', 'pt-BR', 'es-ES']),
         }),
         response: {
           201: z.object({
@@ -52,7 +53,7 @@ export async function registerAccountWithPassword(app: FastifyInstance) {
       },
     },
     async (req, res) => {
-      const { email, name, password } = req.body
+      const { email, name, password, locale } = req.body
 
       const userWithSameEmail = await db
         .select()
@@ -68,6 +69,7 @@ export async function registerAccountWithPassword(app: FastifyInstance) {
         email: email.toLowerCase(),
         name,
         passwordHash,
+        locale,
       })
 
       return res.status(201).send({
