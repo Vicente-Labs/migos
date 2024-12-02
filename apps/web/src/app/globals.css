@@ -57,3 +57,20 @@
     text-rendering: optimizeSpeed;
   }
 }
+
+*::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-right: 0; /* Remove margin to align scrollbar with the right edge */
+}
+
+*::-webkit-scrollbar-track {
+  --bg-opacity: 0.5;
+  background-color: #00000015;
+}
+
+*::-webkit-scrollbar-thumb {
+  --bg-opacity: 0.5;
+  background-color: #13131374;
+  border-radius: 7px;
+}

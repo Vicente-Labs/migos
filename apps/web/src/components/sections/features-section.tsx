@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 
 export function FeaturesSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-24">
+    <section className="relative overflow-hidden py-24">
       <div className="container mx-auto px-4">
         <motion.div
           className="flex flex-col items-center gap-12"
@@ -40,7 +40,7 @@ export function FeaturesSection() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-2xl bg-card p-6 shadow-lg transition-all hover:shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
               <Image
                 src="/features/groups.png"
@@ -58,8 +58,8 @@ export function FeaturesSection() {
               </p>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="group relative overflow-hidden rounded-2xl bg-card p-6 shadow-lg transition-all hover:shadow-xl">
+              <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100" />
               <Image
                 src="/features/groups.png"
                 alt="Invitation Management"
@@ -76,7 +76,7 @@ export function FeaturesSection() {
               </p>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-2xl bg-card p-6 shadow-lg transition-all hover:shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
               <Image
                 src="/features/groups.png"
@@ -94,7 +94,7 @@ export function FeaturesSection() {
               </p>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-2xl bg-card p-6 shadow-lg transition-all hover:shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
               <Image
                 src="/features/groups.png"
@@ -119,7 +119,7 @@ export function FeaturesSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Button size="lg">Start Your Secret Santa Adventure</Button>
+            <Button size="lg">start your Secret Santa adventure</Button>
           </motion.div>
         </motion.div>
       </div>

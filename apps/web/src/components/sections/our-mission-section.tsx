@@ -27,44 +27,42 @@ export function OurMissionSection() {
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 lg:items-start">
           <h1 className="text-4xl md:text-5xl">{dictionary.ourMission}</h1>
-          <span className="max-w-md text-xl text-[#848780] md:text-2xl">
+          <span className="max-w-md text-lg text-[#848780] sm:text-xl md:text-2xl">
             {dictionary.weWereCreatedToAddPracticalityToYourXmasWith}
           </span>
 
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col items-center gap-2 sm:gap-3 lg:items-start">
             <li className="flex flex-row items-center gap-2 text-[#848780]">
               <span className="text-4xl">•</span>
-              <span className="text-lg md:text-xl">
+              <span className="text-lg sm:text-xl">
                 {dictionary.effortlessGiftMatching}
               </span>
             </li>
             <li className="flex flex-row items-center gap-2 text-[#848780]">
               <span className="text-4xl">•</span>
-              <span className="text-lg md:text-xl">
+              <span className="text-lg sm:text-xl">
                 {dictionary.organizedGroupManagement}
               </span>
             </li>
             <li className="flex flex-row items-center gap-2 text-[#848780]">
               <span className="text-4xl">•</span>
-              <span className="text-lg md:text-xl">
+              <span className="text-lg sm:text-xl">
                 {dictionary.funAndEngagingFeatures}
               </span>
             </li>
           </ul>
         </div>
 
-        <div className="w-1/2 lg:w-full">
-          <Button
-            onClick={() => {
-              toast.error(`We're not launched yet.`)
-            }}
-            className="flex w-full flex-row items-center justify-center px-4 py-4 text-sm md:px-6 md:py-6 md:text-xl"
-          >
-            {dictionary.simplifyMyXmas}
-          </Button>
-        </div>
+        <Button
+          onClick={() => {
+            toast.error(`We're not launched yet.`)
+          }}
+          className="flex w-full flex-row items-center justify-center px-4 py-4 text-sm sm:px-6 sm:py-6 sm:text-xl"
+        >
+          {dictionary.simplifyMyXmas}
+        </Button>
       </motion.div>
 
       <motion.div
@@ -78,7 +76,7 @@ export function OurMissionSection() {
           alt="Bell"
           width={500}
           height={500}
-          className="w-[280px] md:w-[400px] lg:w-[500px]"
+          className="w-[280px] sm:w-[400px] lg:w-[500px]"
         />
       </motion.div>
     </motion.section>

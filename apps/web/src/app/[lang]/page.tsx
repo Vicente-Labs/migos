@@ -7,7 +7,7 @@ import { PaperworkSection } from '@/components/sections/paperwork-section'
 
 export default function Home() {
   return (
-    <main className="mt-8 font-cooperBlack">
+    <main className="font-cooperBlack">
       <CTASection />
 
       <PaperworkSection />
