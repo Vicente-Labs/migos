@@ -67,7 +67,6 @@ export async function updateDescription(app: FastifyInstance) {
         const authGroup = groupSchema.parse({
           id: group.id,
           ownerId: userId,
-          ownerPlan: 'BASIC', // irrelevant so we won't spend bandwidth with this db query
           isMember: true,
           role: membership,
           membersCount: 0, // irrelevant so we won't spend bandwidth with this db query

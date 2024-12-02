@@ -84,7 +84,6 @@ export async function createGroup(app: FastifyInstance) {
         const authGroup = groupSchema.parse({
           id: randomCUID,
           ownerId: userId,
-          ownerPlan: user[0].plan,
           isMember: true,
           role: 'MEMBER', // irrelevant so we won't spend bandwidth with this db query
           membersCount: 0,

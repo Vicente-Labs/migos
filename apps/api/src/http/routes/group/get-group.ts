@@ -77,7 +77,6 @@ export async function getGroup(app: FastifyInstance) {
           isMember: true,
           isOwner: group.ownerId === userId,
           role: membership,
-          ownerPlan: 'BASIC', // forcing BASIC plan cuz its irrelevant in this context, and we don't wanna to spend bandwidth with irrelevant db queries
         })
 
         if (cannot('get', authGroup))

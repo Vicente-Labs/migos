@@ -67,7 +67,6 @@ export async function generateMatches(app: FastifyInstance) {
         const authGroup = groupSchema.parse({
           id: group.id,
           ownerId: group.ownerId,
-          ownerPlan: owner[0].plan,
           isMember: true,
           role: membership,
           membersCount: 0, // irrelevant for auth package so we won't spend bandwidth with this db query

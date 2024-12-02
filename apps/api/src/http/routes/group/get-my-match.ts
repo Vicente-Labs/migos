@@ -71,7 +71,6 @@ export async function getMyMatch(app: FastifyInstance) {
         const authGroup = groupSchema.parse({
           id: group.id,
           ownerId: userId,
-          ownerPlan: 'BASIC', // irrelevant so we won't spend bandwidth with this db query
           isMember: true,
           role: membership,
           membersCount: 0, // irrelevant to auth package, our route must handle it

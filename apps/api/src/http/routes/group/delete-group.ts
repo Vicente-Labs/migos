@@ -60,7 +60,6 @@ export async function deleteGroup(app: FastifyInstance) {
         const authGroup = groupSchema.parse({
           id: group.id,
           ownerId: group.ownerId,
-          ownerPlan: 'BASIC', // irrelevant so we won't spend bandwidth with this db query
           isMember: true,
           role: membership,
           membersCount: 1, // irrelevant so we won't spend bandwidth with this db query
